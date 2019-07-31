@@ -1,0 +1,123 @@
+.section-about {
+  background-color: $color-brown-light;
+  padding: 25rem 2rem;
+  margin-top: -15rem;
+
+  @include respond(tab-port) {
+    padding: 20rem 0;
+  }
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.2),
+      rgba($color-primary-dark, 0.6)
+    ),
+    url(../img/vb45.jpg);
+  background-size: cover;
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  background-position: top;
+  margin-top: -15rem;
+
+  @include respond(tab-port) {
+    padding: 15rem 0;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.2),
+        rgba($color-primary-dark, 0.6)
+      ),
+      url(../img/vb45.jpg);
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 15rem 0;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.section-stories {
+  padding: 15rem 0;
+  position: relative;
+  background-color: rgba($color-blue, .2);
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 49%,
+      transparent 50%
+    ),
+    url(../img/vb35.jpg);
+  background-size: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+
+  @include respond(tab-land) {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 100%
+      ),
+      url(../img/vb35.jpg);
+    background-size: cover;
+    background-position: right;
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 100%
+      ),
+      url(../img/vb35.jpg);
+    background-position: right;
+  }
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}
+
+// Sweet SKEW trick: & > * will select the DIRECT child of the partent. In this example, it is .row ///
+//   transform: skewY(-7deg);
+
+//realigns the direct child .row so that it appears straight again
+
+//   & > * {
+//     transform: skewY(7deg);
+//   }
+//====================================================================================================//

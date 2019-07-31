@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- PROD v1.1 -->
+<!-- Made by Grant Chambers with 💚 -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- This site's design is greatly inpired by a CSS course I took from Jonas Schmedtmann  https://www.udemy.com/advanced-css-and-sass/learn/v4/overview -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f56e6f" />
+    <link rel="canonical" href="https://victoriabillington.com" />
+    <link rel="alternate" hreflang="en" href="https://victoriabillington.com" />
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff" href="/css/fonts/linea-basic-10.woff">
+    <!-- SOCIAL -->
+    <meta name="description" content="Choreographer, Dancer, Pianist, and Teacher in Southern Missouri">
+    <meta property="og:title" content="Victoria Billington">
+    <meta property="og:description" content="Dancer, Instructor, Musician, and Artist based out of Springfield, MO.">
+    <meta property="og:image" content="https://victoriabillington.com/img/vb-logo-blue.svg">
+    <meta property="og:url" content="https://victoriabillington.com/index.html">
+    <meta name="twitter:card" content="https://victoriabillington.com/img/vb4-small.jpg">
+    <meta property="og:site_name" content="Victoria Billington">
+    <meta name="twitter:image:alt" content="Victoria is a dancer living in Springfield, MO.">
+    <!-- END SOCIAL -->
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+    <!-- Apple Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/vb-logo-blue-57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/vb-logo-blue-72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/vb-logo-blue-114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/vb-logo-blue-144.png">
+    <!-- STYLE -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- POLYFILL -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <!-- FAV -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <!-- ROBOTS -->
+    <meta name="robots" content="index, follow">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- TITLE -->
+    <title>Victoria Billington</title>
+</head>
+
+<body>
+    <div class="loading">
+
+    </div>
+    <div id="app">
+        <!-- NAVIGATION -->
+        <div>
+            <!-- <img class="loader-svg" src="./img/vb-greyloader.svg" alt="loading"> -->
+
+            <div role="navigation" class="navigation">
+                <input aria-role="menu" type="checkbox" class="navigation__checkbox " id="navi-toggle">
+                <label for="navi-toggle" class="navigation__button">
+                    <span class="navigation__icon">&nbsp;</span>
+                </label>
+
+                <div class="navigation__background">&nbsp;</div>
+
+                <nav class="navigation__nav">
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <a href="#section-about" class="navigation__link">About Victoria</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#section-media" class="navigation__link">Media Gallery</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#section-tours" class="navigation__link">Hire</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#section-stories" class="navigation__link">Testimonies</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#section-email" class="navigation__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <header class="header">
+                <div class="header__text-box">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary--main">Victoria</span>
+                        <span class="heading-primary--sub">Billington</span>
+                    </h1>
+                    <i class="header__logo ">
+                        <img class="u-margin-bottom-medium" src="img/vb-logo-brown.svg" alt="VB Logo">
+                    </i>
+                </div>
+            </header>
+            <!-- ABOUT ME -->
+            <main>
+                <section class="section-about" id="section-about">
+                    <div class="u-center-text u-margin-bottom-large">
+                        <h2 class="heading-secondary">
+                            Choreographer • Dancer • Musician • Teacher • Artist
+                        </h2>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1-of-2">
+                            <h3 class="heading-tertiary u-margin-bottom-small">
+                                Welcome!
+                            </h3>
+                            <p class="paragraph" v-html="aboutMain">
+                            </p>
+                            <a href="#about__full" class="btn-text">Read on &rarr;</a>
+                        </div>
+                        <div class="col-1-of-2">
+                            <div class="composition">
+                                <img src="img/vb90.jpg" alt="Photo 1" class="composition__photo composition__photo--1 lazy">
+                                <img src="img/vb58.jpg" alt="Photo 2" class="composition__photo composition__photo--2 lazy">
+                                <img src="img/cover2.jpg" alt="Photo 3" class="composition__photo composition__photo--3 lazy">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- IMAGES AND MEDIA -->
+                <section class="section-features" id="section-media">
+                    <div class="u-center-text u-margin-bottom-medium">
+                        <h2 class="heading-secondary">
+                            Media
+                        </h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-1-of-3">
+                            <a href="#popup-images" class="feature-box__link" @click="getGallery()">
+                                <div class="feature-box feature-box__gallery">
+                                    <i class="feature-box__icon icon-basic-picture-multiple"></i>
+                                    <h3 class="heading-tertiary u-margin-bottom-small">Image Gallery</h3>
+                                    <p class="feature-box__text">
+                                        Photos of Victoria and her Work
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-1-of-3">
+                            <a href="#popup-videos" class="feature-box__link" @click="getVideos()">
+                                <div class="feature-box feature-box__videos">
+                                    <i class="feature-box__icon icon-basic-video"></i>
+                                    <h3 class="heading-tertiary u-margin-bottom-small">Videos</h3>
+                                    <!-- <p class="feature-box__text">
+                                    Competitions, Choreography, etc
+                                </p> -->
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-1-of-3">
+                            <a :href="pdf.url" target="_blank" class="feature-box__link" @click="getPdf()" rel="noopener">
+                                <div class="feature-box feature-box__resume">
+                                    <i class="feature-box__icon icon-basic-sheet-txt"></i>
+                                    <h3 class="heading-tertiary u-margin-bottom-small">Resume Download</h3>
+                                    <p class="feature-box__text">
+                                        View and Download Victoria's Full Resume Here
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- HIRE ME -->
+                <section class="section-tours" id="section-tours">
+                    <div class="u-center-text u-margin-bottom-large">
+                        <h2 class="heading-secondary">
+                            Hire Victoria
+                        </h2>
+                    </div>
+                    <!-- card 1 start -->
+                    <div class="row">
+                        <div class="col-1-of-3">
+                            <div class="card">
+                                <div class="card__side card__side--front">
+                                    <div class="card__picture card__picture--1">
+                                        &nbsp;
+                                    </div>
+                                    <h4 class="card__heading">
+                                        <span class="card__heading-span card__heading-span--1">Dance Instruction</span>
+                                    </h4>
+                                    <div class="card__details">
+                                        <ul>
+                                            <li>Contemporary</li>
+                                            <li>Modern</li>
+                                            <li>Ballet</li>
+                                            <li>Lyrical</li>
+                                            <li>Musical Theatre</li>
+                                            <li>Conditioning</li>
+                                            <li>Improvisation</li>
+                                            <li>Dance Composition</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card__side card__side--back card__side--back-1">
+                                    <div class="card__cta">
+                                        <div class="card__price-box">
+                                            <p class="card__price-only">
+
+                                            </p>
+                                            <p class="card__price-value">Pricing Varies</p>
+                                        </div>
+                                        <a href="#section-email" class="btn btn--white">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 2 start -->
+                        <div class="col-1-of-3">
+                            <div class="card">
+                                <div class="card__side card__side--front">
+                                    <div class="card__picture ">
+                                        <img class="card__img--2" src="/img/Logo.png" alt="">
+                                    </div>
+                                    <h4 class="card__heading">
+                                        <span class="card__heading-span card__heading-span--2">Private Music Lessons</span>
+                                    </h4>
+                                    <div class="card__details">
+                                        <ul>
+                                            <li>1/2 hr Sessions</li>
+                                            <li>Ages 6 +</li>
+                                            <li>Music Theory</li>
+                                            <li>Piano</li>
+                                            <li>Voice</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card__side card__side--back card__side--back-2">
+                                    <div class="card__cta">
+                                        <div class="card__price-box">
+                                            <p class="card__price-only"></p>
+                                            <p class="card__price-value">$100/month</p>
+                                        </div>
+                                        <a href="#section-email" class="btn btn--white">Book Now!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 3 start -->
+                        <div class="col-1-of-3">
+                            <div class="card">
+                                <div class="card__side card__side--front">
+                                    <div class="card__picture card__picture--3">
+                                        &nbsp;
+                                    </div>
+                                    <h4 class="card__heading">
+                                        <span class="card__heading-span card__heading-span--3">Choreography</span>
+                                    </h4>
+                                    <div class="card__details">
+                                        <ul>
+                                            <li>Competition Choreography</li>
+                                            <li>Concert Choreography</li>
+                                            <li>College / University</li>
+                                            <li>Musicals</li>
+                                            <li>Dance Teams</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card__side card__side--back card__side--back-3">
+                                    <div class="card__cta">
+                                        <div class="card__price-box">
+                                            <p class="card__price-only"></p>
+                                            <p class="card__price-value">Pricing Varies</p>
+                                        </div>
+                                        <a href="#section-email" class="btn btn--white">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u-center-text u-margin-top-large">
+                        <a href="#popup-hire" class="btn btn--green">Learn More &rAarr;</a>
+                    </div>
+                </section>
+                <!-- Testimonies -->
+                <section class="section-stories" id="section-stories">
+                    <div class="u-center-text u-margin-bottom-large">
+                        <h2 class="heading-secondary">
+                            Testimonies
+                        </h2>
+                    </div>
+                    <div class="row" v-for="(testimony, testimonyPragraph) in testimonies">
+                        <div class="story">
+                            <figure class="story__shape">
+                                <img :src="testimony.fields.authorImage.fields.file.url" alt="Friends" class="story__img lazy">
+                                <figcaption class="story__caption">
+                                    {{ testimony.fields.testimonyAuthor }}
+                                </figcaption>
+                            </figure>
+                            <div class="story__text u-margin-bottom-small">
+                                <p>{{ testimony.fields.testimonyParagraph }}</p>
+                                <p class="u-padding-top-small u-right-text"><strong>- {{
+                                        testimony.fields.testimonyAuthor
+                                        }}
+                                    </strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EMAIL ME -->
+                </section>
+                <section class="section-book" id="section-email">
+                    <div class="row">
+                        <div class="book">
+                            <div class="book__form">
+                                <form method="post" class="form" name="contact" data-netlify="true"
+                                    data-netlify-recaptcha="true" data-netlify-honeypot="bot-field">
+
+                                    <label class="form__bot">Don’t fill this out if you're human: <input name="bot-field" />
+                                    </label>
+
+                                    <div class="u-margin-bottom-medium">
+                                        <h2 class="heading-secondary">
+                                            Contact
+                                        </h2>
+                                    </div>
+                                    <div class="form__group">
+                                        <input aria-describedby="full-name" type="text" class="form__input" placeholder="Full Name"
+                                            id="name" name="Full Name" required>
+                                        <label id="full-name" for="name" class="form__label">Full Name</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <input aria-describedby="email" type="email" class="form__input" placeholder="Email Address"
+                                            id="email" name="Email" required>
+                                        <label id="email" for="email" class="form__label">Email</label>
+                                    </div>
+                                    <div class="form__group">
+                                    </div>
+                                    <div class="form__group">
+                                        <textarea aria-describedby="message" name="Message" id="message" class="form__input"
+                                            placeholder="Your message here"></textarea>
+                                        <label id="message" for="Message" class="form__label">"Ask me anything. I'd
+                                            love
+                                            to
+                                            hear from you!" - Victoria B.</label>
+                                    </div>
+                                    <div class="g-recaptcha" data-sitekey="6Lf1YYYUAAAAALgcKVVhE4surKBaPxCHuH3tQqUi"></div>
+                                    <!-- <div data-netlify-recaptcha></div> -->
+
+                                    <div class="form__group u-margin-top-huge">
+                                        <button class="btn btn--green">
+                                            Send &rarr;
+                                        </button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="row">
+                    <div class="footer__logo-box">
+                        <img src="img/vb-logo-blue.svg" alt="Footer Logo" class="footer__logo lazy">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1-of-2">
+                        <div class="footer__navigation">
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="https://www.facebook.com/victoriaton?fref=search" class="footer__link"
+                                        target="_blank" rel="noopener">
+                                        <img src="img/Facebook.svg " alt="Facebook Icon Link">
+                                    </a>
+                                </li>
+                                <li class="footer__item ">
+                                    <a href="https://www.instagram.com/doctorvsmooth/ " class="footer__link" target="_blank "
+                                        rel="noopener">
+                                        <img src="img/Instagram.svg " alt="Instagram Icon Link ">
+                                    </a>
+                                </li>
+                                <li class="footer__item ">
+                                    <a href="https://twitter.com/doctorvsmooth " class="footer__link" target="_blank"
+                                        rel="noopener">
+                                        <img src="img/Twitter.svg " alt="Twitter Icon Link">
+                                    </a>
+                                </li>
+                                <li class="footer__item ">
+                                    <a href="https://www.etsy.com/shop/PeculiarPenny" class="footer__link" target="_blank "
+                                        rel="noopener">
+                                        <img src="img/pp-logo.jpg" alt="Etsy Store Logo Link" class="footer__store-logo">
+                                    </a>
+                                    <a href="https://www.etsy.com/shop/PeculiarPenny" class="btn-text" target="_blank"
+                                        rel="noopener">Check
+                                        out Victoria's online store &rarr;</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-of-2 ">
+                        <p class="footer__copyright ">
+                            Copyright &copy; Victoria Billington | 2019
+                        </p>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- POPUPS -->
+            <div class="popup" id="popup-hire">
+                <div class="popup__content">
+                    <div class="popup__left">
+                        <img src="img/vb58.jpg" alt="popup image" class="popup__img lazy">
+                        <img src="img/SDA.jpg" alt="popup image" class="popup__img lazy">
+                    </div>
+                    <div class="popup__right">
+                        <a href="#section-tours" class="popup__close">&times;</a>
+                        <h2 class="heading-secondary u-margin-bottom-small">Lessons</h2>
+                        <!-- <h3 class="heading-tertiary u-margin-bottom-small">Yada Yada yada</h3> -->
+                        <p class="popup__text">
+                            {{ site.popupLessonsDescription }}
+                        </p>
+                        <a href="#section-email" class="btn btn--green">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <!-- POPUP ABOUT FULL -->
+            <div class="popup lazy" id="about__full">
+                <div class="popup__content">
+                    <a style="position: fixed;" href="#section-about" class="popup__close">&times;</a>
+
+                    <div class="popup__about">
+                        <h2 class="heading-secondary u-margin-bottom-small">Victoria's Story</h2>
+                        <h3 class="heading-tertiary u-margin-bottom-small">#1992</h3>
+                        <p class="popup__about--text" v-html="aboutFull">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Gallery Popup -->
+
+            <div class="popup" id="popup-images">
+                <div class="popup__gallery">
+                    <div class="popup__gallery--heading u-margin-bottom-large">
+                        <a aria-role="button" aria-label="close" href="#section-media" class="popup__close">&times;</a>
+                        <h3 class="heading-secondary u-margin-bottom-small">Image Gallery</h3>
+                        <br>
+                        <img data-src="img/vb-logo-blue.svg" alt="Blue-VB-Logo" class="lazy">
+                    </div>
+
+                    <div v-if="selected" class="popup__gallery--selected">
+                        <img :src="selected" alt="Selected Image to fill the viewport" class="popup__gallery--selected-image"
+                            @click.stop="selected = null">
+
+                    </div>
+
+                    <figure class="popup__gallery--item" v-for="image in images" :key="image.id">
+                        <img :src="`${image.fields.file.url}?fm=jpg&fl=progressive`" alt="Gallery Image of Dancers"
+                            @click="selectedImage()" class="popup__gallery--img lazy">
+                        <figcaption>{{ image.fields.description }}</figcaption>
+                    </figure>
+                    <!-- <p class="popup__gallery--credit">Photos by: Tyler Jo Gaines </p> -->
+                </div>
+            </div>
+            <!-- Video Gallery -->
+            <div class="popup" id="popup-videos">
+                <div class="popup__gallery">
+                    <div class="popup__gallery--heading ">
+                        <a href="#section-media" class="popup__close">&times;</a>
+                        <h3 class="heading-secondary u-margin-bottom-small">Video Gallery</h3>
+                        <br>
+                        <img data-src="img/vb-logo-blue.svg" alt="Blue-VB-Logo" class="lazy">
+                    </div>
+                    <figure v-for="video in videos" :key="video.id">
+                        <div class="popup__gallery--video" v-html="video.fields.videoLink">
+
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bundle.js"></script>
+
+    <script>
+        const navigation = document.querySelector(".navigation");
+        const navCheckbox = document.querySelector(".navigation__checkbox");
+        const navItems = document.querySelectorAll(".navigation__link");
+
+        navItems.forEach(item => item.addEventListener("click", _ => navCheckbox.checked = false));
+    </script>
+</body>
+
+</html>

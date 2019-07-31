@@ -1,0 +1,22 @@
+// .loader *,
+// .loader *:before,
+// .loader *:after {
+//   height: 100vh;
+//   width: 100%;
+//   top: 0;
+//   left: 0;
+//   position: fixed;
+//   animation-play-state: paused !important;
+//   z-index: 9999;
+
+//   .loader-svg {
+//     transform: translate(-50%, -50%);
+//     width: 150rem;
+//   }
+// }
+
+.loading {
+  background-image: url(../../img/vb-greyloader.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
