@@ -1,5 +1,6 @@
 
-# ![logo](https://github.com/phantompepper/Victoria-Billington-Site/blob/master/img/favicon.png) victoriabillington.com
+![logo](https://github.com/phantompepper/Victoria-Billington-Site/blob/master/img/favicon.png)
+# Victoria Billington
 
 - Victoria Billington Portfolio Site
 - Built with Vuejs, Sass
